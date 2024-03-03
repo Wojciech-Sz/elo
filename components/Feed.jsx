@@ -44,13 +44,13 @@ const Feed = () => {
     return filteredPostsList;
   };
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      const res = await fetch("/api/prompt");
-      const data = await res.json();
+  const fetchPost = async () => {
+    const res = await fetch("/api/prompt");
+    const data = await res.json();
 
-      setPosts(data);
-    };
+    setPosts(data);
+  };
+  useEffect(() => {
     fetchPost();
   }, []);
 
